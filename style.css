@@ -1,6 +1,6 @@
 /*
-Theme Name: idm250-kjb396 Portfolio Theme
-Theme URI: https://github.com/mrpaulphan/idm250
+Theme Name: idm250-kjb396
+Theme URI: https://github.com/kimbonilla/idm250-kjb396
 Author: Kimberly Bonilla
 Author URI: https://kimberlybonilla.netlify.app/
 Description: This is a custom theme built for Project 1 of IDM250.
@@ -10,3 +10,7 @@ Requires at least: 6.1.1
 Tested up to: 6.1.1
 Requires PHP: 7.4
 */
+
+* {
+    color: red;
+}
