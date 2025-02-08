@@ -11,6 +11,220 @@ Tested up to: 6.1.1
 Requires PHP: 7.4
 */
 
-* {
-    color: red;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap'); /*Raleway*/
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap'); /*Noto Sans*/
+
+:root {
+    --tan-light: #F8F5F2;
+    --blue-dark: #151E28;
+    --yellow: #F5BE71;
+    --clay: #9B5131;
+}
+
+main {
+    background-color: var(--tan-light);
+    padding: 32px;
+}
+
+p, a, li {
+    font-family: 'Noto Sans';
+    font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway';
+}
+/*nav bar*/
+/*header box*/
+
+header {
+    font-family: 'Raleway';
+    position: relative;
+    background-color: rgba(255, 255, 255, 0);
+    color: var(--blue-dark);
+    width: 100%;
+    border-bottom: var(--blue-dark) 4px solid;
+}
+
+header a{
+    font-family: 'Raleway';
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.24px;
+    text-transform: capitalize;
+    color: var(--blue-dark);
+    text-decoration: underline solid transparent;
+    transition: text-decoration 0.2s ease;
+}
+
+header a:hover{
+    text-decoration: underline;
+}
+
+.top-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 85px;
+    padding: 0px 32px;
+}
+
+.top-nav img {
+    height: 50px;
+    width: 75px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    max-width: 100%;
+    font-family: 'crimson-pro';
+    font-size: 24px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu > li {
+    margin: 0 2.5vw;
+    overflow: visible;
+}
+
+.menu-button-container {
+    display: none;
+    height: 100%;
+    width: 50px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+/*hamburger icon*/
+.menu-button, .menu-button::before, .menu-button::after {
+    display: block;
+    background-color: var(--tan1);
+    position: absolute;
+    height: 8px;
+    width: 55px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 10px;
+}
+
+.menu-button::before {
+    content: '';
+    margin-top: -18px;
+}
+
+.menu-button::after {
+    content: '';
+    margin-top: 18px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+}
+
+/*pop-up menu*/
+@media (max-width: 699px) {
+
+    .top-nav {
+        padding: 0px 50px;
+    }
+
+    .menu-button-container {
+        display: flex;
+    }
+
+    .menu {
+        position: absolute;
+        top: 0;
+        margin-top: 75px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 6px 6px rgb(0, 0, 0, 0.2);
+    }
+
+    .menu > li {
+        overflow: hidden;
+    }
+
+    #menu-toggle ~ .menu li {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    #menu-toggle:checked ~ .menu li {
+        border: .75px solid var(--red1);
+        height: 3em;
+        padding: .5em;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .menu > li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 1em 0;
+        width: 100%;
+        background-color: var(--red3);
+    }
+
+    .menu > li a {
+        display:block;
+        width: 100%;
+        height: 100%;
+        line-height: 46px;
+    }
+}
+
+.post-title {
+    border-left: var(--yellow) 4px solid;
+    padding-left: 12px;
+}
+
+.post-thumbnail img {
+    max-width: 80%;
+    max-height: 60vh;
+    width: auto;
+    height: auto;
+    margin: auto;
+    border-radius: 12px;
+}
+
+.post-container a {
+    color: var(--clay);
+}
+
+footer {
+    background-color: var(--blue-dark);
+    color: var(--tan-light);
+    padding: 20px 0;
+    text-align: center;
+    font-family: 'karla';
+    font-size: 16px;
 }
