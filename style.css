@@ -34,7 +34,7 @@ main {
     padding: 32px;
 }
 
-p, a, li, td {
+p, a, li, td, figcaption {
     color: var(--blue-dark);
     font-family: 'Noto Sans';
     font-size: 16px;
@@ -129,9 +129,54 @@ ul, ol {
     padding: 0;
 }
 
+.wp-block-pullquote {
+    padding: 12px 0;
+}
+
+blockquote {
+    display: flex;
+    flex-direction: column;
+    border-left: var(--accent-yellow) 8px solid;
+    padding-left: 12px;
+}
+
+blockquote p {
+    font-family: "Noto Sans";
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0.4px;
+    text-align: left;
+    
+}
+
+cite {
+    font-family: "Noto Sans";
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 160%;
+    letter-spacing: 0.4px;
+    text-align: left;    
+}
+
+img {
+    width: 600px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
 .wp-block-button__link {
     background-color: var(--accent-clay);
     border-radius: 12px;
+}
+
+.wp-block-table td, .wp-block-table th {
+    border: var(--blue-dark) 2px solid;
+    text-align: start;
+    vertical-align: top;
 }
 
 /*header box*/
