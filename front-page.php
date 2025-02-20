@@ -1,3 +1,5 @@
 <?php get_header(); ?>
-<p>Hello, world!</p>
+<main>
+    <p>Hello, world!</p>
+</main>
 <?php get_footer(); ?>

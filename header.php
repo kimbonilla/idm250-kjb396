@@ -1,30 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>
         <?php
-        wp_title('|', true, 'right'); // Page title
-        bloginfo('name'); // IDM250-KJB396
+        wp_title('|', true, 'right'); // About
+        bloginfo('name'); // IDM250
         ?>
     </title>
     <?php wp_head(); ?>
 </head>
-<header>
-    <section class="top-nav">
-        <div>
-            <a href="index.html"><img src="" alt="Logo"></a>
-        </div>
-        <input id="menu-toggle" type="checkbox">
-        <label class="menu-button-container" for="menu-toggle">
-        <span class="menu-button"></span>
-        </label>
-        <ul class="menu">
-            <li><a href="">About Us</a></li>
-            <li><a href="">E-Board</a></li>
-            <li><a href="">Barrio Fiesta</a></li>
-            <li><a href="">Gallery</a></li>
-            <li><a href="">Calendar</a></li>
-            <li><a href="">Contact Us</a></li>
-        </ul>
-    </section>
-</header>
+
+<body <?php body_class(); ?>>
+    <header>
+        <section class="top-nav">
+            <div class="header__logo">
+                <?php if (has_custom_logo()) : ?>
+                <div class="site-logo">
+                    <?php the_custom_logo(); ?>
+                </div>
+                <?php else: ?>
+                <a href="<?php echo esc_url(home_url('/')); ?>" class="site-title">
+                    <?php bloginfo('name'); ?>
+                </a>
+                <?php endif; ?>
+            </div>
+            <input id="menu-toggle" type="checkbox">
+                <label class="menu-button-container" for="menu-toggle">
+                    <span class="menu-button"></span>
+                </label>
+            <!--<div class="menu">*/-->
+                <?php get_template_part('components/main-header'); ?>
+                <?php
+                    wp_nav_menu([
+                        'theme_location' => 'primary-menu',
+                    ]);
+                ?>
+            <!--</div>-->
+        </section>
+    </header>
