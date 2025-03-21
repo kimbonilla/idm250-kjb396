@@ -10,9 +10,9 @@ function theme_styles_and_scripts()
 
     wp_enqueue_style(
         'idm-main', // Handle for the stylesheet
-        get_template_directory_uri() . '/style.css', // Path to the stylesheet
+        get_template_directory_uri() . '/index.css', // Path to the stylesheet
         [], // No dependencies
-        filemtime(get_template_directory() . '/style.css') // Cache-busting by file modification time
+        filemtime(get_template_directory() . '/index.css') // Cache-busting by file modification time
     );
 
     /*wp_enqueue_script(
