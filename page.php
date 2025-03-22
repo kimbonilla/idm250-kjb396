@@ -12,7 +12,7 @@
         </div>
         <h1 class="page-header">
             <?php echo get_the_title(); ?>
-            </h1>
+        </h1>
     </div>
         <div class="page-content">
             <?php echo get_the_content(); ?>

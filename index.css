@@ -25,7 +25,7 @@ p, a, li, td, figcaption {
     color: var(--blue-dark);
     font-family: 'Noto Sans';
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 160%;
     letter-spacing: 0.16px;
 }
@@ -53,10 +53,10 @@ h1 {
 
 h2 {
     font-size: 48px;
-font-style: normal;
-font-weight: 800;
-line-height: normal;
-letter-spacing: -0.48px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: -0.48px;
 }
 
 h3 {
@@ -96,7 +96,7 @@ p {
     font-family: "Noto Sans";
     font-size: 16px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 160%;
     letter-spacing: 0.08px;
     margin: 8px 0;
@@ -485,6 +485,45 @@ footer p {
     justify-content: center;
 }
 
+/*two column page*/
+.full-width {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 48px;
+    min-height: 70vh;
+    margin: 48px auto;
+    padding: 0 48px;
+}
+
+.column-page-header {
+    border-left: var(--accent-yellow) 8px solid;
+    padding: 0 24px;
+}
+
+.full-width .page-content {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.full-width .wp-block-columns {
+    display: flex;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    gap: 48px;
+}
+
+.full-width .wp-block-column {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    padding: 0;
+    gap: 12px;
+}
+
 /*single*/
 .show-hero {
     display: flex;
@@ -524,6 +563,58 @@ footer p {
 
 .post-content .featured-image {
     margin: auto;
+}
+
+/* archive/listings page*/
+.archive-page {
+    display: flex;
+    flex-direction: column;
+    margin: 48px auto;
+    padding: 0 48px;
+    row-gap: 48px;
+    min-height: 70vh;
+}
+
+.all-shows {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    gap: 24px;
+}
+
+.show-card {
+    display: flex;
+    position: relative;
+    width: 252px;
+    height: 252px;
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--accent-clay);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.show-card img {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    height: 148px;
+    width: auto;
+    border-radius: 8px;
+}
+
+.show-card h6, .show-card p{
+    color: var(--tan-light);
+    text-decoration: none;
+    margin: 0;
 }
 
 /*404*/
